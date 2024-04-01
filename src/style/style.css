@@ -1,0 +1,15 @@
+body {
+  background-color: aliceblue;
+}
+#container {
+  display: flex;
+}
+.left-container {
+  width: 45%;
+}
+.left-container {
+  width: 45%;
+}
+.new-task {
+  width: 33%;
+}

@@ -12,14 +12,17 @@
           <img src="" alt="" id="logo" />
           <h1>Odin's Chores</h1>
         </div>
-        <aside class="new-task">
-          <form id="new-task-form">
+        <div class="new-chore">
+          <form id="new-chore-form">
             <label for="title">Title:</label>
             <input type="text" id="title" />
+
             <label for="date">Due date:</label>
             <input type="date" id="date" />
+
             <label for="priority">Priority:</label>
-            <input type="range" min="1" max="5" value="1" id="read" />
+            <input type="range" min="1" max="5" value="1" id="priority" />
+
             <label for="description">Description:</label>
             <textarea
               type="text"
@@ -30,15 +33,15 @@
               spellcheck="true"
             ></textarea>
 
-            <input type="submit" value="Add Chore" />
+            <input type="submit" id="new-chore-btn" value="Add Chore" />
           </form>
-        </aside>
+        </div>
         <div class="filters"></div>
-        <aside class="finished"></aside>
+        <div class="finished"></div>
       </div>
       <div class="right-container">
         <div class="filters"></div>
-        <aside class="unfinished"></aside>
+        <div class="unfinished"></div>
       </div>
     </div>
   </body>

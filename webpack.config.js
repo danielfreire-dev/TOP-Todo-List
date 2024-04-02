@@ -20,7 +20,7 @@ module.exports = {
       filename: "index.html", //maybe "index.[contenthash].html"?
       template: "./src/template.html",
       hash: true,
-      title: "TOP-Todo-List",
+      title: "TOP-Odin's-Chores",
       meta: {
         author: "Daniel Freire",
       },

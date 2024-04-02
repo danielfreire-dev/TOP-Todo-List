@@ -1,8 +1,18 @@
 body {
   background-color: aliceblue;
+  display: flex;
+  align-items: center;
+}
+#close {
+  float: right;
+  display: inline-block;
+  padding: 2px 5px;
+  background: #ccc;
 }
 #container {
   display: flex;
+  min-height: 100%;
+  min-width: 100%;
 }
 .left-container {
   width: 45%;
@@ -12,4 +22,10 @@ body {
 }
 .new-task {
   width: 33%;
+}
+.unfinished {
+  background-color: whitesmoke;
+  border-color: black;
+  min-height: 50px;
+  min-width: 500px;
 }

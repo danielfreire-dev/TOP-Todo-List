@@ -29,15 +29,24 @@ body {
 .new-task {
   width: 33%;
 }
-.unfinished {
+#unfinished {
   background-color: white;
   border-color: black;
   border-style: solid;
   min-height: 50px;
-  min-width: 500px;
+  min-width: 400px;
+  max-width: 95%;
 }
 .chore-card {
   width: 90%;
   border-color: blue;
   border-style: solid;
+}
+#finished {
+  background-color: white;
+  border-color: rgb(102, 255, 0);
+  border-style: solid;
+  min-height: 50px;
+  min-width: 400px;
+  max-width: 95%;
 }

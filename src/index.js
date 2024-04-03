@@ -13,10 +13,12 @@ function Chore(title, date, priority, description) {
 
 function render() {
   let unfinishedList = document.querySelector("#unfinished");
-
   unfinishedList.innerHTML = "";
-  for (let i = 0; i < choreList.lenght; i++) {
+
+  for (let i = 0; i < choreList.length; i++) {
     let chore = choreList[i];
+    console.log("choreList: ");
+    console.log(choreList[i]);
     let choreCard = document.createElement("div");
     choreCard.setAttribute("class", "chore-card");
     choreCard.innerHTML = `
@@ -34,7 +36,6 @@ function render() {
     <input type="submit" value="Completed" />
   </div>
     `;
-
     unfinishedList.appendChild(choreCard);
   }
 }
@@ -53,8 +54,10 @@ function createCard() {
   let description = document.querySelector("#description").value;
   let newChore = new Chore(title, date, priority, description);
   choreList.push(newChore);
-  console.log("newChore: " + newChore);
-  console.log("choreList: " + choreList);
+  console.log("newChore: ");
+  console.log(newChore);
+  console.log("choreList: ");
+  console.log(choreList);
   render();
 }
 

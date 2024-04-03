@@ -12,23 +12,29 @@ function Chore(title, date, priority, description) {
 }
 
 function render() {
-  let unfinishedList = document.querySelector(".unfinished");
+  let unfinishedList = document.querySelector("#unfinished");
+
   unfinishedList.innerHTML = "";
   for (let i = 0; i < choreList.lenght; i++) {
     let chore = choreList[i];
     let choreCard = document.createElement("div");
     choreCard.setAttribute("class", "chore-card");
     choreCard.innerHTML = `
-    <div class='chore-header'>
-    <span id='close' onclick='this.parentNode.parentNode.choreFinished(); return false;'>x</span>
-    <h3 class='title '>${chore.title}</h3>
+    <div class="chore-header">
+    <span
+      id="close"
+      onclick="this.parentNode.parentNode.choreFinished(${i}); return false;"
+      >x</span
+    >
+    <h3 class="title">${chore.title}</h3>
 
-    <h4 class='date'>${chore.date}</h4>
-    <div class='priority'>${chore.priority}</div>
-    <p class='description'>${chore.description}</p>
-    <input type='submit' vale='Completed'/>
-    </div>
+    <h4 class="date">${chore.date}</h4>
+    <div class="priority">${chore.priority}</div>
+    <p class="description">${chore.description}</p>
+    <input type="submit" value="Completed" />
+  </div>
     `;
+
     unfinishedList.appendChild(choreCard);
   }
 }
@@ -47,12 +53,14 @@ function createCard() {
   let description = document.querySelector("#description").value;
   let newChore = new Chore(title, date, priority, description);
   choreList.push(newChore);
+  console.log("newChore: " + newChore);
+  console.log("choreList: " + choreList);
   render();
 }
 
-let newChoreBtn = document.querySelector("#new-chore-btn");
+let newChoreBtn = document.querySelector("#new-chore-form");
 newChoreBtn.addEventListener("submit", function (event) {
   event.preventDefault();
   createCard();
-  console.log(choreList);
+  /* console.log(choreList); */
 });

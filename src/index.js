@@ -4,13 +4,13 @@ import "/src/style/style.css";
 let choreList = [];
 let finishedList = [];
 
-function Chore(title, date, priority, description, project, completed) {
+function Chore(title, date, priority, description, project /* completed */) {
   this.title = title;
   this.date = date;
   this.priority = priority;
   this.description = description;
   this.project = project;
-  this.completed = completed;
+  /* this.completed = completed; */
 }
 
 Chore.prototype.toggleComplete = function () {
@@ -34,11 +34,7 @@ function render() {
     choreCard.setAttribute("class", "chore-card");
     choreCard.innerHTML = `
     <div class="chore-header">
-    <span
-      id="close"
-      onclick="this.parentNode.parentNode.choreFinished(${i}); return false;"
-      >x</span
-    >
+    
     <h3 class="title">${chore.title}</h3>
 
     <h4 class="date">${chore.date}</h4>
@@ -48,7 +44,14 @@ function render() {
 
   </div>
     `;
-
+    {
+      /* <span
+  id="close"
+  onclick="this.parentNode.parentNode.choreFinished(${i}); return false;"
+>
+  x
+</span>; */
+    }
     unfinishedList.appendChild(choreCard);
   }
 }
@@ -57,8 +60,10 @@ function createCard() {
   let title = document.querySelector("#title").value;
   let date = document.querySelector("#date").value;
   let priority = document.querySelector("#priority").value;
+  let project = document.querySelector("#project");
   let description = document.querySelector("#description").value;
-  let newChore = new Chore(title, date, priority, description);
+
+  let newChore = new Chore(title, date, priority, description, project);
   choreList.push(newChore);
   /*  console.log("newChore: ");
   console.log(newChore);
@@ -74,17 +79,22 @@ newChoreBtn.addEventListener("submit", function (event) {
   /* console.log(choreList); */
 });
 
-let finishedBtn = document.querySelector(".chore-card");
-finishedBtn.addEventListener("change", function choreFinished(index) {
+let completedBtn = document.getElementById("completed");
+if (completedBtn == true) {
   console.log("checkbox checked");
-  finishedList.concat(choreList[index]);
-  choreList.splice(index, 1);
-  render();
-});
+  /* choreFinished(index); */
+} else {
+}
 
-/* function choreFinished(index) {
+function choreFinished(index) {
   finishedList.concat(choreList[index]);
   /* starting from 'index', removes 1 element */
-/*choreList.splice(index, 1);
+  choreList.splice(index, 1);
   render();
-} */
+}
+
+let finishedDiv = document.getElementById("finished");
+
+if (finishedDiv.innerHTML === "") {
+  finishedDiv.innerHTML = `<h2>No chored chores yet 🤨</h2>`;
+}

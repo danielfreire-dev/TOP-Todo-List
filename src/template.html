@@ -23,12 +23,22 @@
             <label for="priority">Priority:</label>
             <input type="range" min="1" max="5" value="1" id="priority" />
 
-            <label for="priority">Project Name:</label>
-            <select name="miscellaneous" id="miscellaneous">
-              Miscellaneous
+            <label for="project">Project Name:</label>
+            <select name="project" id="project">
+              <option value="miscellaneous" id="miscellaneous" selected>
+                Miscellaneous
+              </option>
             </select>
-
-            <label for="description">Description:</label>
+            <br />
+            <label for="newProject">Start new project:</label>
+            <input
+              type="text"
+              name="newProject"
+              id="newProject"
+              placeholder="New Project"
+            />
+            <br />
+            <label for="description">Description:</label><br />
             <textarea
               type="text"
               id="description"
@@ -42,6 +52,7 @@
           </form>
         </div>
         <div class="filters"></div>
+        <h3>Chored Chores</h3>
         <div id="finished"></div>
       </div>
       <div class="right-container">

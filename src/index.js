@@ -1,8 +1,12 @@
 /* import { storageAvailable } from "./app/webStorage"; */
 import "/src/style/style.css";
 
-let choreList = [];
-let finishedList = [];
+let projectList = localStorage.setItem("finishedList") || {
+  home: [],
+  Gym: [],
+  Study: [],
+  Work: [],
+};
 
 function Chore(title, date, priority, description, project /* completed */) {
   this.title = title;
@@ -33,16 +37,16 @@ function render() {
     let choreCard = document.createElement("div");
     choreCard.setAttribute("class", "chore-card");
     choreCard.innerHTML = `
-    <div class="chore-header">
-    
-    <h3 class="title">${chore.title}</h3>
 
-    <h4 class="date">${chore.date}</h4>
+  <div class="chore-header">
+    <div class="title">${chore.title}</div>
+
+    <div class="date">${chore.date}</div>
     <div class="priority">${chore.priority}</div>
     <p class="description">${chore.description}</p>
-    <input type="checkbox" value="Completed" id='completed' />
-
+    <input type="checkbox" value="Completed" id="completed" />
   </div>
+
     `;
     {
       /* <span
@@ -93,8 +97,41 @@ function choreFinished(index) {
   render();
 }
 
-let finishedDiv = document.getElementById("finished");
+let unfinishedDiv = document.getElementById("unfinished");
 
-if (finishedDiv.innerHTML === "") {
-  finishedDiv.innerHTML = `<h2>No chored chores yet 🤨</h2>`;
+if (unfinishedDiv.innerHTML === "") {
+  unfinishedDiv.innerHTML = `<h2>No chores yet 🤨</h2>`;
 }
+
+let modal = document.getElementById("modal");
+
+let chorebtn = document.getElementById("modalBtn");
+
+let span = document.querySelector(".close");
+
+chorebtn.onclick = function () {
+  modal.style.display = "block";
+};
+span.onclick = function () {
+  modal.style.display = "none";
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+let rangeBar = document.getElementById("priority");
+window.onload = function (event) {
+  event.preventDefault();
+  console.log(rangeBar.value);
+
+  if (rangeBar.value == "2") {
+    rangeBar.style.accentColor = "green";
+  } else if (rangeBar.value == "3") {
+    rangeBar.style.accentColor = "yellow";
+  } else if (rangeBar.value == "4") {
+    rangeBar.style.accentColor = "orange";
+  } else if (rangeBar.value == "5") {
+    rangeBar.style.accentColor = "red";
+  }
+};

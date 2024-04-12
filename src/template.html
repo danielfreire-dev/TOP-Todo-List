@@ -6,54 +6,79 @@
     <title>Odin's Chores</title>
   </head>
   <body>
+    <nav id="topbar">
+      <img src="" alt="" id="logo" />
+      <h1>Odin's Chores</h1>
+    </nav>
     <div id="container">
       <div class="left-container">
-        <div class="header">
-          <img src="" alt="" id="logo" />
-          <h1>Odin's Chores</h1>
-        </div>
+        <div id="projects"></div>
+
         <div class="new-chore">
-          <form id="new-chore-form">
-            <label for="title">Title:</label>
-            <input type="text" id="title" />
+          <button type="button" id="modalBtn">+</button>
 
-            <label for="date">Due date:</label>
-            <input type="date" id="date" />
-
-            <label for="priority">Priority:</label>
-            <input type="range" min="1" max="5" value="1" id="priority" />
-
-            <label for="project">Project Name:</label>
-            <select name="project" id="project">
-              <option value="miscellaneous" id="miscellaneous" selected>
-                Miscellaneous
-              </option>
-            </select>
-            <br />
-            <label for="newProject">Start new project:</label>
-            <input
-              type="text"
-              name="newProject"
-              id="newProject"
-              placeholder="New Project"
-            />
-            <br />
-            <label for="description">Description:</label><br />
-            <textarea
-              type="text"
-              id="description"
-              cols="30"
-              rows="5"
-              placeholder="Insert Chore"
-              spellcheck="true"
-            ></textarea>
-
-            <input type="submit" id="new-chore-btn" value="Add Chore" />
-          </form>
+          <div id="modal">
+            <div class="modal-container">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">New Chore</h2>
+              </div>
+              <div class="modal-body">
+                <div class="left-card">
+                  <ul class="choreOptions">
+                    <li id="newChore">Chore</li>
+                    <li id="newProject">Project</li>
+                  </ul>
+                </div>
+                <div class="right-card">
+                  <form id="new-chore-form">
+                    <input
+                      type="text"
+                      id="title"
+                      placeholder="Title: Insert your title here"
+                    />
+                    <br />
+                    <textarea
+                      type="text"
+                      id="description"
+                      cols="30"
+                      rows="5"
+                      placeholder="Insert Chore: e.g clean the house, pay bills, ..."
+                      spellcheck="true"
+                    ></textarea>
+                    <!-- <label for="project">Project Name:</label>
+                    <select name="project" id="project">
+                      <option value="miscellaneous" id="miscellaneous" selected>
+                        Miscellaneous
+                      </option>
+                    </select>
+                    <br />
+                    <label for="newProject">Start new project:</label>
+                    <input
+                      type="text"
+                      name="newProject"
+                      id="newProject"
+                      placeholder="New Project"
+                    />-->
+                    <br />
+                    <label for="date">Due date:</label>
+                    <input type="date" id="date" />
+                    <br />
+                    <label for="priority">Priority:</label>
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      value="2"
+                      id="priority"
+                    />
+                    <input type="submit" id="new-chore-btn" value="Add Chore" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="filters"></div>
-        <h3>Chored Chores</h3>
-        <div id="finished"></div>
       </div>
       <div class="right-container">
         <div class="filters"></div>

@@ -1,14 +1,97 @@
 body {
   background-color: aliceblue;
+}
+#container {
   display: flex;
   align-items: center;
 }
-#close {
-  float: right;
-  display: inline-block;
-  padding: 2px 5px;
-  background: #ccc;
+nav {
+  width: 100%;
+  border-color: aqua;
+  border-style: solid;
 }
+#modalBtn {
+  border-radius: 50%;
+}
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-container {
+  width: 70%;
+  margin: auto;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: olivedrab;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.left-card {
+  padding-right: 1em;
+  border-right: 3px;
+  border-right-style: solid;
+  border-right-color: #000;
+}
+.modal-footer {
+  padding: 2px 16px;
+  background-color: olivedrab;
+  color: white;
+}
+
 #container {
   display: flex;
   justify-content: space-around;
@@ -42,7 +125,7 @@ body {
   border-color: blue;
   border-style: solid;
 }
-#finished {
+#projects {
   background-color: white;
   border-color: rgb(102, 255, 0);
   border-style: solid;
@@ -50,4 +133,7 @@ body {
   min-width: 400px;
   max-width: 95%;
   color: black;
+}
+.choreOptions li {
+  list-style-type: none;
 }

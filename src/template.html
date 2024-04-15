@@ -7,12 +7,18 @@
   </head>
   <body>
     <nav id="topbar">
-      <img src="" alt="" id="logo" />
+      <img src="" alt="logo" id="logo" />
       <h1>Odin's Chores</h1>
     </nav>
     <div id="container">
       <div class="left-container">
-        <div id="projects"></div>
+        <div id="projects">
+          <ul>
+            <li id="homeProject">Home</li>
+            <li id="gardenProject">Garden</li>
+            <li id="gymProject">Gym</li>
+          </ul>
+        </div>
 
         <div class="new-chore">
           <button type="button" id="modalBtn">+</button>
@@ -46,20 +52,7 @@
                       placeholder="Insert Chore: e.g clean the house, pay bills, ..."
                       spellcheck="true"
                     ></textarea>
-                    <!-- <label for="project">Project Name:</label>
-                    <select name="project" id="project">
-                      <option value="miscellaneous" id="miscellaneous" selected>
-                        Miscellaneous
-                      </option>
-                    </select>
-                    <br />
-                    <label for="newProject">Start new project:</label>
-                    <input
-                      type="text"
-                      name="newProject"
-                      id="newProject"
-                      placeholder="New Project"
-                    />-->
+
                     <br />
                     <label for="date">Due date:</label>
                     <input type="date" id="date" />

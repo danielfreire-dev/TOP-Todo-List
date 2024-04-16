@@ -13,7 +13,7 @@
     <div id="container">
       <div class="left-container">
         <div id="projects">
-          <ul>
+          <ul id="project-list">
             <li id="homeProject">Home</li>
             <li id="gardenProject">Garden</li>
             <li id="gymProject">Gym</li>
@@ -36,8 +36,8 @@
                     <li id="newProject">Project</li>
                   </ul>
                 </div>
-                <div class="right-card">
-                  <form id="new-chore-form">
+                <div id="right-card">
+                  <form id="new-chore-form" style="display: none">
                     <input
                       type="text"
                       id="title"
@@ -66,6 +66,19 @@
                       id="priority"
                     />
                     <input type="submit" id="new-chore-btn" value="Add Chore" />
+                  </form>
+                  <form id="new-project-form" style="display: none">
+                    <input
+                      type="text"
+                      id="project-title"
+                      placeholder="Title: Your new project"
+                    />
+
+                    <input
+                      type="submit"
+                      id="new-project-btn"
+                      value="Add Project"
+                    />
                   </form>
                 </div>
               </div>

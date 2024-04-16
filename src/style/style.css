@@ -137,3 +137,14 @@ nav {
 .choreOptions li {
   list-style-type: none;
 }
+
+#projects li {
+  list-style-type: none;
+}
+
+/* #new-chore-form {
+}
+
+#new-project-form {
+  display: none;
+} */

@@ -13,7 +13,7 @@ function Chore(title, description, date, priority, completed) {
 }
 
 Chore.prototype.toggleCompleted = function () {
-  this.read = !this.read;
+  this.completed = !this.completed;
 };
 
 function toggleCompleted(index) {
@@ -28,7 +28,6 @@ function render() {
     let choreCard = document.createElement("div");
     choreCard.setAttribute("class", "chore-card");
     choreCard.innerHTML = `
-
   <div class="chore-header">
     <div class="title">${chore.title}</div>
     <div class="date">${chore.date}</div>
@@ -36,9 +35,8 @@ function render() {
     <p class="description">${chore.description}</p>
     <input type="checkbox" value="Completed" id="completed" />
   </div>
-
     `;
-    choreList.appendChild(choreCard);
+    unfinishedDiv.appendChild(choreCard);
   }
 }
 
@@ -55,24 +53,23 @@ function addChoreToList() {
   let completed = false;
 
   let newChore = new Chore(title, description, date, priority, completed);
-
+  console.log("click");
   choreList.push(newChore);
   render();
 }
-
+let choreForm = document.querySelector("#new-chore-form");
 let newChoreButton = document.querySelector("#modalBtn");
 newChoreButton.addEventListener("click", function (event) {
   event.preventDefault();
   let newChoreForm = document.querySelector("#modal");
   newChoreForm.computedStyleMap.display = "block";
+  choreForm.style.display = "block";
 });
 
-document
-  .querySelector("#new-chore-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    addChoreToList;
-  });
+choreForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  addChoreToList();
+});
 
 if (unfinishedDiv.innerHTML === "") {
   unfinishedDiv.innerHTML = `<h2>No chores yet 🤨</h2>`;
@@ -93,3 +90,44 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+let modalRightCard = document.getElementById("right-card");
+
+let modalNewChore = document.querySelector("#newChore");
+
+let projectForm = document.querySelector("#new-project-form");
+
+modalNewChore.addEventListener("click", function () {
+  projectForm.style.display = "none";
+  choreForm.style.display = "block";
+});
+
+let modalNewProject = document.querySelector("#newProject");
+modalNewProject.addEventListener("click", function () {
+  choreForm.style.display = "none";
+  projectForm.style.display = "block";
+});
+
+/* Create new Project */
+let newProjectBtn = document.querySelector("#new-project-btn");
+let ulProjects = document.querySelector("#project-list");
+newProjectBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  let projectName = document.querySelector("#project-title").value;
+  console.log(projectName);
+  let newLi = document.createElement("li");
+  /* newLi.appendChild(document.createTextNode(projectName)); */
+  newLi.appendChild(document.createTextNode(projectName));
+  ulProjects.appendChild(newLi);
+  /* let newLi = document.createElement("li");
+  newLi.appendChild(title);
+  ulProjects.appendChild(newLi); */
+  /* createProject(); */
+});
+
+function createProject() {
+  let newLi = document.createElement("li");
+  /* newLi.appendChild(document.createTextNode(projectName)); */
+  newLi.appendChild(projectName);
+  ulProjects.appendChild(newLi);
+}

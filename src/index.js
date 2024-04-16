@@ -116,18 +116,10 @@ newProjectBtn.addEventListener("click", function (event) {
   let projectName = document.querySelector("#project-title").value;
   console.log(projectName);
   let newLi = document.createElement("li");
-  /* newLi.appendChild(document.createTextNode(projectName)); */
   newLi.appendChild(document.createTextNode(projectName));
   ulProjects.appendChild(newLi);
-  /* let newLi = document.createElement("li");
-  newLi.appendChild(title);
-  ulProjects.appendChild(newLi); */
-  /* createProject(); */
+  newLi.setAttribute("id", projectName);
+  projectList.push(projectName);
+  let newDiv = document.createElement("div");
+  newDiv.setAttribute("div", projectName + "Div");
 });
-
-function createProject() {
-  let newLi = document.createElement("li");
-  /* newLi.appendChild(document.createTextNode(projectName)); */
-  newLi.appendChild(projectName);
-  ulProjects.appendChild(newLi);
-}

@@ -1,5 +1,17 @@
 /* import { storageAvailable } from "./app/webStorage"; */
 import "/src/style/style.css";
+import logo from "/src/assets/logo.png";
+
+let topBar = document.querySelector("#topbar");
+topBar.setAttribute("id", "top-bar");
+let logoHeader = document.createElement("img");
+logoHeader.setAttribute("id", "logo");
+logoHeader.src = logo;
+topBar.appendChild(logoHeader);
+
+let topTitle = document.createElement("h1");
+topTitle.textContent = "Odin's Chores";
+topBar.appendChild(topTitle);
 
 let projectList = [];
 let choreList = [];
@@ -22,7 +34,7 @@ function toggleCompleted(index) {
 }
 let unfinishedDiv = document.querySelector("#unfinished");
 function render() {
-  unfinishedDiv.innerHTML = "";
+  /* unfinishedDiv.innerHTML = ""; */
   for (let i = 0; i < choreList.length; i++) {
     let chore = choreList[i];
     let choreCard = document.createElement("div");
@@ -61,8 +73,10 @@ let choreForm = document.querySelector("#new-chore-form");
 let newChoreButton = document.querySelector("#modalBtn");
 newChoreButton.addEventListener("click", function (event) {
   event.preventDefault();
+
   let newChoreForm = document.querySelector("#modal");
   newChoreForm.computedStyleMap.display = "block";
+  projectForm.style.display = "none";
   choreForm.style.display = "block";
 });
 
@@ -115,6 +129,9 @@ newProjectBtn.addEventListener("click", function (event) {
   event.preventDefault();
   let projectName = document.querySelector("#project-title").value;
   console.log(projectName);
+  let arrayName = projectName + "Array";
+  console.log(arrayName);
+  /* let [arrayName] = []; */
   let newLi = document.createElement("li");
   newLi.appendChild(document.createTextNode(projectName));
   ulProjects.appendChild(newLi);
@@ -122,4 +139,5 @@ newProjectBtn.addEventListener("click", function (event) {
   projectList.push(projectName);
   let newDiv = document.createElement("div");
   newDiv.setAttribute("div", projectName + "Div");
+  unfinishedDiv.appendChild(newDiv);
 });

@@ -6,87 +6,96 @@
     <title>Odin's Chores</title>
   </head>
   <body>
-    <nav id="topbar"></nav>
-    <div id="container">
-      <div class="left-container">
-        <div id="projects">
-          <ul id="project-list">
-            <li id="homeProject">Home</li>
-            <li id="gardenProject">Garden</li>
-            <li id="gymProject">Gym</li>
-          </ul>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="sidebar-title">
+          <!-- <img src="assets/logo.png" alt="tOP logo" /> -->
+          <h2>Odin's Chores</h2>
         </div>
-
-        <div class="new-chore">
-          <button type="button" id="modalBtn">+</button>
-
-          <div id="modal">
-            <div class="modal-container">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2 id="modalTitle">New Chore</h2>
-              </div>
-              <div class="modal-body">
-                <div class="left-card">
-                  <ul class="choreOptions">
-                    <li id="newChore">Chore</li>
-                    <li id="newProject">Project</li>
-                  </ul>
-                </div>
-                <div id="right-card">
-                  <form id="new-chore-form" style="display: none">
-                    <input
-                      type="text"
-                      id="title"
-                      placeholder="Title: Insert your title here"
-                    />
-                    <br />
-                    <textarea
-                      type="text"
-                      id="description"
-                      cols="30"
-                      rows="5"
-                      placeholder="Insert Chore: e.g clean the house, pay bills, ..."
-                      spellcheck="true"
-                    ></textarea>
-
-                    <br />
-                    <label for="date">Due date:</label>
-                    <input type="date" id="date" />
-                    <br />
-                    <label for="priority">Priority:</label>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value="2"
-                      id="priority"
-                    />
-                    <input type="submit" id="new-chore-btn" value="Add Chore" />
-                  </form>
-                  <form id="new-project-form" style="display: none">
-                    <input
-                      type="text"
-                      id="project-title"
-                      placeholder="Title: Your new project"
-                    />
-
-                    <input
-                      type="submit"
-                      id="new-project-btn"
-                      value="Add Project"
-                    />
-                  </form>
-                </div>
-              </div>
+        <div class="list-collection-container">
+          <div class="list-collection-heading">
+            <h3 class="list-collection-title">My Lists</h3>
+            <div class="plus-btn-container">
+              <h3 class="new-list-btn">New</h3>
+              <!-- <img
+                src="plusBtn.svg"
+                class="list-collection-add-btn"
+                alt="Add button"
+              /> -->
+              <p class="list-collection-add-btn">+</p>
             </div>
           </div>
+          <ul class="list-container"></ul>
+          <form class="list-form">
+            <div class="list-input-container">
+              <input class="list-input" type="text" />
+              <span class="list-span">List Name Here</span>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="right-container">
-        <div class="filters"></div>
-        <div id="unfinished"></div>
-      </div>
+      <main class="main">
+        <div class="main-content"></div>
+      </main>
     </div>
+
+    <div class="modal" id="task-modal">
+      <form id="form" class="task-form">
+        <legend class="item-form-title">
+          <div>Chore Item</div>
+        </legend>
+        <div class="item-grid">
+          <input
+            type="text"
+            class="task-title"
+            name="title"
+            placeholder="Chore Title"
+            required
+          />
+
+          <input
+            type="text"
+            maxlength="250"
+            class="task-description"
+            name="Description"
+            placeholder="Chore Description"
+          />
+
+          <input
+            type="date"
+            class="task-date"
+            min="2024/01/01"
+            max="2050/12/31"
+            name="date"
+          />
+          <select class="task-priority" name="priority" id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <div class="item-form-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="submit" type="submit">Add task</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal" id="list-modal">
+      <form id="list-form">
+        <div class="list-title">List Title</div>
+
+        <div class="list-body">
+          <label
+            >New List Name: <input type="text" class="list-name-input"
+          /></label>
+          <div class="edit-list-buttons">
+            <button type="submit">Submit</button>
+            <button class="cancel">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="overlay"></div>
   </body>
 </html>

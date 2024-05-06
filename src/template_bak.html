@@ -1,0 +1,61 @@
+<div class="left-container">
+  <div id="projects">
+    <ul id="project-list"></ul>
+  </div>
+
+  <div class="new-chore">
+    <button type="button" id="modalBtn">+</button>
+
+    <div id="modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle">New Chore</h2>
+        </div>
+        <div class="modal-body">
+          <div class="left-card">
+            <ul class="choreOptions">
+              <li id="newChore">Chore</li>
+              <li id="newProject">Project</li>
+            </ul>
+          </div>
+          <div id="right-card">
+            <form id="new-chore-form" style="display: none">
+              <input
+                type="text"
+                id="title"
+                placeholder="Title: Insert your title here"
+              />
+              <br />
+              <textarea
+                type="text"
+                id="description"
+                cols="30"
+                rows="5"
+                placeholder="Insert Chore: e.g clean the house, pay bills, ..."
+                spellcheck="true"
+              ></textarea>
+
+              <br />
+              <label for="date">Due date:</label>
+              <input type="date" id="date" />
+              <br />
+              <label for="priority">Priority:</label>
+              <input type="range" min="1" max="5" value="2" id="priority" />
+              <input type="submit" id="new-chore-btn" value="Add Chore" />
+            </form>
+            <form id="new-project-form" style="display: none">
+              <input
+                type="text"
+                id="project-title"
+                placeholder="Title: Your new project"
+              />
+
+              <input type="submit" id="new-project-btn" value="Add Project" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

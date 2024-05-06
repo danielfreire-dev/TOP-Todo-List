@@ -1,19 +1,18 @@
-/* import { storageAvailable } from "./app/webStorage"; */
 import "/src/style/style.css";
-import logo from "/src/assets/logo.png";
+/* import logo from "/src/assets/logo.svg"; */
+import { screenController } from "/src/app/ui";
+screenController();
 
-let topBar = document.querySelector("#topbar");
-topBar.setAttribute("id", "top-bar");
-let logoHeader = document.createElement("img");
-logoHeader.setAttribute("id", "logo");
-logoHeader.src = logo;
+/* let topBar = document.querySelector("#topbar");
+topBar.setAttribute("id", "top-bar"); */
+/* 
 topBar.appendChild(logoHeader);
 
-let topTitle = document.createElement("h1");
+/* let topTitle = document.createElement("h1");
 topTitle.textContent = "Odin's Chores";
-topBar.appendChild(topTitle);
+topBar.appendChild(topTitle); */
 
-let projectList = [];
+/* let projectList = [];
 let choreList = [];
 
 function Chore(title, description, date, priority, completed) {
@@ -33,9 +32,9 @@ function toggleCompleted(index) {
   render();
 }
 let unfinishedDiv = document.querySelector("#unfinished");
-function render() {
-  /* unfinishedDiv.innerHTML = ""; */
-  for (let i = 0; i < choreList.length; i++) {
+function render() { */
+/* unfinishedDiv.innerHTML = ""; */
+/*   for (let i = 0; i < choreList.length; i++) {
     let chore = choreList[i];
     let choreCard = document.createElement("div");
     choreCard.setAttribute("class", "chore-card");
@@ -120,10 +119,10 @@ let modalNewProject = document.querySelector("#newProject");
 modalNewProject.addEventListener("click", function () {
   choreForm.style.display = "none";
   projectForm.style.display = "block";
-});
+}); */
 
 /* Create new Project */
-let newProjectBtn = document.querySelector("#new-project-btn");
+/* let newProjectBtn = document.querySelector("#new-project-btn");
 let ulProjects = document.querySelector("#project-list");
 newProjectBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -132,7 +131,7 @@ newProjectBtn.addEventListener("click", function (event) {
   let arrayName = projectName + "Array";
   console.log(arrayName);
   /* let [arrayName] = []; */
-  let newLi = document.createElement("li");
+/* let newLi = document.createElement("li");
   newLi.appendChild(document.createTextNode(projectName));
   ulProjects.appendChild(newLi);
   newLi.setAttribute("id", projectName);
@@ -140,4 +139,4 @@ newProjectBtn.addEventListener("click", function (event) {
   let newDiv = document.createElement("div");
   newDiv.setAttribute("div", projectName + "Div");
   unfinishedDiv.appendChild(newDiv);
-});
+}); */

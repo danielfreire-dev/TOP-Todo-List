@@ -9,8 +9,7 @@
     "build": "webpack",
     "chores": "git subtree push --prefix dist origin gh-pages"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Daniel Freire",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",

@@ -69,9 +69,7 @@ body {
   padding: 0.5rem;
   gap: 1rem;
 }
-.new-list-btn:hover {
-  cursor: pointer;
-}
+
 .plus-btn-container:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   background-color: var(--main-grey-color);

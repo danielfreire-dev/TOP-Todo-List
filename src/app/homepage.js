@@ -7,11 +7,6 @@ export function renderHomepage() {
   homepageTitle.innerHTML = "To-Do App";
   homepageTitle.classList.add("homepage-title");
 
-  const logoHeader = document.createElement("img");
-  logoHeader.setAttribute("id", "logo");
-  logoHeader.src = logo;
-  sidebarTitle.prepend(logo);
-
   const homepageDescr = document.createElement("p");
   homepageDescr.innerHTML =
     "Create a new list by clicking the + button or select an existing one to start adding your tasks.";

@@ -221,6 +221,11 @@ function screenController() {
   function renderHomepage() {
     clearTasks();
 
+    const logoHeader = document.createElement("img");
+    logoHeader.setAttribute("id", "logo");
+    logoHeader.src = logo;
+    sidebarTitle.prepend(logo);
+
     let homepageTitle = document.createElement("h1");
     homepageTitle.textContent = "Odin's Chores";
     homepageTitle.classList.add("homepage-title");

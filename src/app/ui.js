@@ -1,5 +1,5 @@
 /* Import modules: */
-import logo from "/src/assets/logo.svg";
+
 import * as listModule from "/src/app/list";
 import * as taskModule from "/src/app/task";
 import {
@@ -9,6 +9,7 @@ import {
 
 /* Import icons: */
 
+import logo from "/src/assets/logo.svg";
 import editBtn from "/src/assets/editBtn.svg";
 import deleteBtn from "/src/assets/deleteBtn.svg";
 import plusBtn from "/src/assets/circle-plus.svg";
@@ -221,9 +222,10 @@ function screenController() {
   function renderHomepage() {
     clearTasks();
 
-    const logoHeader = document.createElement("img");
-    logoHeader.setAttribute("id", "logo");
+    let logoHeader = document.createElement("img");
     logoHeader.src = logo;
+    logoHeader.setAttribute("id", "logo");
+
     sidebarTitle.prepend(logo);
 
     let homepageTitle = document.createElement("h1");

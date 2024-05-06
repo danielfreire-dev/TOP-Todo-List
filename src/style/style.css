@@ -69,8 +69,18 @@ body {
   padding: 0.5rem;
   gap: 1rem;
 }
+button {
+  cursor: pointer;
+}
 .new-list-btn:hover {
   cursor: pointer;
+}
+.pointer:hover {
+  cursor: pointer;
+}
+.plus-btn {
+  width: 24px;
+  height: 24px;
 }
 .plus-btn-container:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;

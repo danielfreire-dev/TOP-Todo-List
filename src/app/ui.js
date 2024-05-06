@@ -38,7 +38,7 @@ function screenController() {
   let taskDate = document.querySelector(".task-date");
   let taskPriority = document.querySelector(".task-priority");
 
-  sidebarTitle.setAttribute("class", "pointer");
+  sidebarTitle.classList.add("pointer");
   sidebarTitle.addEventListener("click", renderHomepage);
 
   listInput.addEventListener("mouseout", toggleFormDisplay);
@@ -148,10 +148,10 @@ function screenController() {
     }
   }
 
-  addListBtn.setAttribute("class", "pointer");
+  addListBtn.classList.add("pointer");
   addListBtn.addEventListener("click", toggleFormDisplay);
 
-  listContainer.setAttribute("class", "pointer");
+  listContainer.classList.add("pointer");
   listContainer.addEventListener("click", selectElement);
 
   function selectElement(e) {
@@ -172,7 +172,7 @@ function screenController() {
       renderLists();
     }
   }
-  button.setAttribute("class", "pointer");
+  button.classList.add("pointer");
   cancelBtns.forEach((button) => {
     button.addEventListener("click", () => {
       let modal = document.querySelector(".modal.active");
@@ -212,7 +212,7 @@ function screenController() {
     modal.classList.remove("active");
     overlay.classList.remove("active");
   }
-  overlay.setAttribute("class", "pointer");
+  overlay.classList.add("pointer");
   overlay.addEventListener("click", () => {
     let modal = document.querySelector(".modal.active");
     closeModal(modal);
@@ -248,7 +248,7 @@ function screenController() {
     let addItemContainer = document.createElement("div");
     addItemContainer.classList.add("add-item-container");
 
-    addItemContainer.setAttribute("class", "pointer");
+    addItemContainer.classList.add("pointer");
     addItemContainer.addEventListener("click", () => {
       selectedTaskId = "none";
       let taskModal = document.querySelector("#task-modal");
@@ -272,7 +272,7 @@ function screenController() {
   }
 
   /* Still necessary? */
-  taskContainer.setAttribute("class", "pointer");
+  taskContainer.classList.add("pointer");
   taskContainer.addEventListener("click", selectTaskElement);
 
   function selectTaskElement(e) {
@@ -343,7 +343,7 @@ function screenController() {
       deleteItemBtn.dataset.taskId = task.id;
       deleteItemBtn.dataset.btn = "delete";
 
-      deleteItemBtn.setAttribute("class", "pointer");
+      deleteItemBtn.classList.add("pointer");
       deleteItemBtn.addEventListener("click", (e) => {
         selectedTaskId = task.id;
         taskModule.deleteTask(selectedListId, selectedTaskId);
@@ -361,7 +361,7 @@ function screenController() {
       editItemBtn.dataset.taskId = task.id;
       editItemBtn.dataset.btn = "edit";
 
-      editItemBtn.setAttribute("class", "pointer");
+      editItemBtn.classList.add("pointer");
       editItemBtn.addEventListener("click", () => {
         selectedTaskId = task.id;
         taskName.value = task.name;

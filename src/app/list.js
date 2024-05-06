@@ -24,6 +24,7 @@ const createList = (name) => {
   } else {
     const list = List(name);
     lists.push(list);
+    list.classList.add("pointer");
   }
 
   saveToLocalStorage(lists);

@@ -69,15 +69,17 @@ body {
   padding: 0.5rem;
   gap: 1rem;
 }
-/* button {
-  cursor: pointer;
-} */
-.new-list-btn:hover {
+.list-name:hover,
+.new-list-btn:hover,
+.pointer:hover,
+.list-edit:hover,
+.list-delete:hover,
+input[type="checkbox"]:hover,
+.cancel:hover,
+.submit:hover {
   cursor: pointer;
 }
-.pointer:hover {
-  cursor: pointer;
-}
+
 .plus-btn {
   width: 24px;
   height: 24px;

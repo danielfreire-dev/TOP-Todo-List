@@ -42,6 +42,12 @@ function screenController() {
   sidebarTitle.classList.add("pointer");
   sidebarTitle.addEventListener("click", renderHomepage);
 
+  let logoHeader = document.createElement("img");
+  logoHeader.src = logo;
+  logoHeader.classList.add("logo");
+
+  sidebarTitle.prepend(logoHeader);
+
   listInput.addEventListener("mouseout", toggleFormDisplay);
 
   function addItem(e) {
@@ -152,7 +158,7 @@ function screenController() {
   addListBtn.classList.add("pointer");
   addListBtn.addEventListener("click", toggleFormDisplay);
 
-  listContainer.classList.add("pointer");
+  /* listContainer.classList.add("pointer"); */
   listContainer.addEventListener("click", selectElement);
 
   function selectElement(e) {
@@ -222,12 +228,6 @@ function screenController() {
   function renderHomepage() {
     clearTasks();
 
-    let logoHeader = document.createElement("img");
-    logoHeader.src = logo;
-    logoHeader.classList.add("logo");
-
-    sidebarTitle.prepend(logoHeader);
-
     let homepageTitle = document.createElement("h1");
     homepageTitle.textContent = "Odin's Chores";
     homepageTitle.classList.add("homepage-title");
@@ -279,7 +279,7 @@ function screenController() {
   }
 
   /* Still necessary? */
-  taskContainer.classList.add("pointer");
+
   taskContainer.addEventListener("click", selectTaskElement);
 
   function selectTaskElement(e) {

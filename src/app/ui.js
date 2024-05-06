@@ -224,9 +224,9 @@ function screenController() {
 
     let logoHeader = document.createElement("img");
     logoHeader.src = logo;
-    logoHeader.setAttribute("id", "logo");
+    logoHeader.classList.add("logo");
 
-    sidebarTitle.prepend(logo);
+    sidebarTitle.appendChild(logo);
 
     let homepageTitle = document.createElement("h1");
     homepageTitle.textContent = "Odin's Chores";

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin's Chores</title>
+  <meta name="author" content="Daniel Freire"><script defer src="main.0186ab58b8fa4667d0cd.js?146d1f06314b4b546546"></script></head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="sidebar-title">
+          <!-- <img src="assets/logo.png" alt="tOP logo" /> -->
+          <h2>Odin's Chores</h2>
+        </div>
+        <div class="list-collection-container">
+          <div class="list-collection-heading">
+            <h3 class="list-collection-title">My Lists</h3>
+            <div class="plus-btn-container">
+              <h3 class="new-list-btn">New</h3>
+              <!-- <img
+                src="plusBtn.svg"
+                class="list-collection-add-btn"
+                alt="Add button"
+              /> -->
+              <p class="list-collection-add-btn">+</p>
+            </div>
+          </div>
+          <ul class="list-container"></ul>
+          <form class="list-form">
+            <div class="list-input-container">
+              <input class="list-input" type="text" />
+              <span class="list-span">List Name Here</span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <main class="main">
+        <div class="main-content"></div>
+      </main>
+    </div>
+
+    <div class="modal" id="task-modal">
+      <form id="form" class="task-form">
+        <legend class="item-form-title">
+          <div>Chore Item</div>
+        </legend>
+        <div class="item-grid">
+          <input
+            type="text"
+            class="task-title"
+            name="title"
+            placeholder="Chore Title"
+            required
+          />
+
+          <input
+            type="text"
+            maxlength="250"
+            class="task-description"
+            name="Description"
+            placeholder="Chore Description"
+          />
+
+          <input
+            type="date"
+            class="task-date"
+            min="2024/01/01"
+            max="2050/12/31"
+            name="date"
+          />
+          <select class="task-priority" name="priority" id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <div class="item-form-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="submit" type="submit">Add task</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal" id="list-modal">
+      <form id="list-form">
+        <div class="list-title">List Title</div>
+
+        <div class="list-body">
+          <label
+            >New List Name: <input type="text" class="list-name-input"
+          /></label>
+          <div class="edit-list-buttons">
+            <button type="submit">Submit</button>
+            <button class="cancel">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="overlay"></div>
+  </body>
+</html>

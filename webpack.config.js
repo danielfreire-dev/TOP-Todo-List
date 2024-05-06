@@ -25,6 +25,7 @@ module.exports = {
       meta: {
         author: "Daniel Freire",
       },
+      favicon: "/src/assets/logo.svg",
     }),
     new CleanWebpackPlugin(),
   ],

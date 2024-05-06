@@ -172,7 +172,7 @@ function screenController() {
       renderLists();
     }
   }
-  button.classList.add("pointer");
+
   cancelBtns.forEach((button) => {
     button.addEventListener("click", () => {
       let modal = document.querySelector(".modal.active");

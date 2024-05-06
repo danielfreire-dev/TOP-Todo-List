@@ -1,5 +1,5 @@
 /* Import modules: */
-
+import logo from "/src/assets/logo.svg";
 import * as listModule from "/src/app/list";
 import * as taskModule from "/src/app/task";
 import {

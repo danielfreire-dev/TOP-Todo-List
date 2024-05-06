@@ -260,7 +260,7 @@ function screenController() {
 
     let addItemImg = document.createElement("img");
     addItemImg.src = plusBtn;
-    addItemImg.classList("plus-btn");
+    addItemImg.classList.add("plus-btn");
 
     addItemContainer.appendChild(addItemH3);
     addItemContainer.appendChild(addItemImg);
